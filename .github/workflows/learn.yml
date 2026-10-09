@@ -1,0 +1,21 @@
+name: Learn YAML  # Workflow name
+
+on:
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest  # GitHub-hosted runner
+
+    steps:
+      - uses: actions/checkout@v4  # Downloads repository code
+
+      - uses: actions/setup-python@v5  # Installs Python
+        with:
+          python-version: "3.x"  # Selects Python 3
+
+      - name: Install PyYAML  # Installs YAML support
+        run: pip install pyyaml
+
+      - name: Read config  # Runs the Python script
+        run: python scripts/read_config.py

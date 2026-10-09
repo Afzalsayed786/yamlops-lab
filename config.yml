@@ -1,0 +1,2 @@
+app_name: payment-api  # Defines the application name
+app_version: "1.0"     # Defines the application version
