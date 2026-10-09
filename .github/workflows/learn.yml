@@ -19,3 +19,9 @@ jobs:
 
       - name: Read config  # Runs the Python script
         run: python scripts/read_config.py
+                
+      - name: Share a value  # Names the step
+        run: echo "APP_NAME=payment-api" >> "$GITHUB_ENV"  # Shares a variable with later steps
+
+      - name: Use the value  # Names the next step
+        run: echo "App is $APP_NAME"  # Prints the shared variable
